@@ -2,7 +2,7 @@ from datetime import datetime, timedelta
 from github import Github
 
 gh = Github("nikhilm", open("token.cfg").read().strip())
-repo = gh.get_repo("iron-io/go")
+repo = gh.get_repo("<put repo here>")
 
 howlong = timedelta(days=30)
 deadline = datetime.now() - howlong
