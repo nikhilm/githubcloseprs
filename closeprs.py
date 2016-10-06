@@ -10,6 +10,6 @@ print "Deadline", deadline
 for pr in repo.get_pulls():
     mtime = pr.updated_at
     if mtime < deadline:
-        print pr.number, pr.title, "will be deleted", mtime
-        # pr.create_issue_comment('Closing this since it was last modified more than %s days ago. This is an automated message.' % howlong.days)
-        # pr.edit(state='closed')
+        pr.create_issue_comment('Closing this since it was last modified more than %s days ago. This is an automated message.' % howlong.days)
+        pr.edit(state='closed')
+        print pr.number, pr.title, "closed", mtime
